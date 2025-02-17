@@ -4,54 +4,54 @@ import "./Quiz.css"; // Add this file for styling
 const Quiz = () => {
     const questions = [
         {
-            question: "What is the capital of France?",
-            options: ["Paris", "Berlin", "London", "Madrid"],
-            answer: "Paris"
+            question: "1. What does AI stand for?",
+            options: ["Artificial Imagination", "Automated Intelligence", "Artificial Intelligence", "Autonomous Integration"],
+            answer: "Artificial Intelligence"
         },
         {
-            question: "What is 2 + 2?",
-            options: ["3","5", "4", "6"],
-            answer: "4"
+            question: "2. Which type of AI can perform tasks similar to humans?",
+            options: ["Narrow AI", "General AI", "Supervised AI", "Reinforcement AI"],
+            answer: "General AI"
         },
         {
-            question: "What is the largest planet in our solar system?",
-            options: ["Mars", "Venus", "Earth", "Jupiter"],
-            answer: "Jupiter"
+            question: "3. Which AI model is developed by OpenAI?",
+            options: ["AlphaZero", "BERT", "ChatGPT", "Watson"],
+            answer: "ChatGPT"
         },
         {
-            question: "Who wrote 'To Kill a Mockingbird'?",
-            options: ["J.K. Rowling", "Mark Twain", "Harper Lee", "Ernest Hemingway"],
-            answer: "Harper Lee"
+            question: "4. What is overfitting in AI?",
+            options: ["Good performance on all data", "Poor performance on training data", "Over-simplifying a model", "Good performance on training data but poor on new data"],
+            answer: "Good performance on training data but poor on new data"
         },
         {
-            question: "What is the chemical symbol for gold?",
-            options: ["Ag", "Fe", "Au", "Pb"],
-            answer: "Au"
+            question: "5. Which AI technique is inspired by human learning through experiences?",
+            options: ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Deep Learning"],
+            answer: "Reinforcement Learning"
         },
         {
-            question: "How many continents are there on Earth?",
-            options: ["5", "7", "8", "6"],
-            answer: "7"
+            question: "6. What is the goal of AI?",
+            options: ["To simulate human intelligence", "To automate all human tasks", "To replace humans", "To build machines that don't require programming"],
+            answer: "To simulate human intelligence"
         },
         {
-            question: "Which ocean is the largest?",
-            options: ["Atlantic Ocean", "Arctic Ocean", "Indian Ocean", "Pacific Ocean"],
-            answer: "Pacific"
+            question: "7. Which of the following is an application of AI?",
+            options: ["Self-driving cars", "Spreadsheets", "Manual labor", "None of the above"],
+            answer: "Self-driving cars"
         },
         {
-            question: "Who painted the Mona Lisa?",
-            options: ["Van Gogh", "Leonardo da Vinci", "Rembrandt", "Pablo Picasso"],
-            answer: "Leonardo da Vinci"
+            question: "8. What is a neural network?",
+            options: ["A network of computers", "A network of human brains", "A machine learning model inspired by the human brain", "A social network for AI experts"],
+            answer: "A machine learning model inspired by the human brain"
         },
         {
-            question: "What is the square root of 64?",
-            options: ["6", "7", "8", "9"],
-            answer: "8"
+            question: "9. What is machine learning?",
+            options: ["Programming machines to perform tasks", "Teaching computers to learn from data", "Building robots", "Designing games with AI"],
+            answer: "Teaching computers to learn from data"
         },
         {
-            question: "What year did the first man land on the moon?",
-            options: ["1969","1959",  "1979", "1989"],
-            answer: "1969"
+            question: "10. Which type of AI is used in facial recognition?",
+            options: ["Narrow AI", "General AI", "Weak AI", "Supervised AI"],
+            answer: "Narrow AI"
         }
     ];
 
@@ -78,14 +78,16 @@ const Quiz = () => {
 
     return (
         <div className="quiz-container">
+            
+
             <h2 className="heading1">Flashcard Quiz</h2>
             <div className="question-box">
                 <h3>{questions[currentQuestion].question}</h3>
             </div>
             <div className="options-container">
                 {questions[currentQuestion].options.map((option, index) => (
-                    <button 
-                        key={index} 
+                    <button
+                        key={index}
                         className={`option-btn ${selectedAnswer === option ? 
                             (option === questions[currentQuestion].answer ? "correct" : "wrong") : ""}`}
                         onClick={() => handleAnswerClick(option)}
@@ -94,6 +96,10 @@ const Quiz = () => {
                         {option}
                     </button>
                 ))}
+            </div>
+            {/* Score Box */}
+            <div className="score-box">
+                <h3>Score: {score}</h3>  {/* Display score */}
             </div>
         </div>
     );

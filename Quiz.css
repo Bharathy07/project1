@@ -1,51 +1,54 @@
+/* Quiz.css */
 .quiz-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color:#ffccff;
-    
+    height: 100vh; /* Fixed typo */
+    background-color: #ffccff;
 }
-.heading1{
+
+.heading1 {
     font-size: 40px;
-    padding-bottom:80px;
+    padding-bottom: 80px;
+    margin-bottom: 9px;
+    line-height:0 ;
 }
+
 .question-box {
-    background:white;
+    background: white;
     padding: 20px;
+    margin-bottom: 60px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgb(109, 2, 70);
     text-align: center;
-    width: 80%;
+    width: 100%;
     max-width: 500px;
-    margin-bottom: 30px;
-    font-size: 26px;
-
-    
+    font-size: 20px;
 }
 
 .options-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .option-btn {
     width: 300px;
     padding: 20px;
-    font-size: 26px;
-    background-color:#3399ff;
+    font-size: 23px;
+    background-color: #3399ff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    margin-bottom: 10px;
 }
 
 .option-btn:hover {
-    background-color: #002db3;
+    background-color: #05237d;
 }
 
 .option-btn.correct {
@@ -55,4 +58,7 @@
 .option-btn.wrong {
     background-color: #dc3545; /* Red for wrong */
 }
-
+.score-box{
+    color: black;
+    font-size: larger;
+}
